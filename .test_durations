@@ -1,0 +1,4 @@
+{
+    "tests/integration/test_api.py::test_index_route": 0.0027787089999999903,
+    "tests/unit/test_sample.py::test_sum[test_cases0]": 0.00023345699999999248
+}

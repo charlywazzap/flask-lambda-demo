@@ -1,0 +1,30 @@
+# serverless.yml
+---
+service: api-test
+frameworkVersion: "3"
+
+
+plugins:
+  - serverless-python-requirements
+  - serverless-deployment-bucket
+custom:
+  pythonRequirements:
+    slim: true
+    noDeploy:
+      - boto3
+      - botocore
+    dockerizePip: true
+    usePipenv: true
+
+provider:
+  name: aws
+  deploymentBucket: "cc-lambda-deployments"
+
+functions:
+  - test-api:
+      memorySize: 2048
+      handler: wsgi_handler.handler
+      events:
+        - httpApi:
+            method: "*"
+            path: "/{proxy+}"

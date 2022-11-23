@@ -1,0 +1,19 @@
+{
+    "name": "api-test",
+    "description": "",
+    "version": "0.1.0",
+    "devDependencies": {
+      "eslint": "^7.30.0",
+      "serverless-plugin-resource-tagging": "^1.2.0",
+      "serverless-python-requirements": "^5.4.0"
+    },
+    "eslintConfig": {
+      "rules": {
+        "quotes": [
+          "error",
+          "double"
+        ]
+      }
+    }
+  }
+  

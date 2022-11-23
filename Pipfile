@@ -1,0 +1,30 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+flask = "*"
+werkzeug = "*"
+serverless-wsgi = "*"
+
+[dev-packages]
+black = "*"
+python-lambda-local = "*"
+pytest = "*"
+isort = "*"
+pytest-split = "*"
+
+[requires]
+python_version = "3.8"
+
+[scripts]
+dev = "python ./wsgi.py"
+format = "black . --exclude=node_modules|venv"
+format_ci = "black . --check --exclude=node_modules"
+sort = "isort . --profile black"
+sort_ci = "isort . --check --profile black"
+test_lambda = "python-lambda-local -f handler wsgi_handler.py test_api_gateway_payload.json"
+test = "pytest -v"
+test-store-duration = "pytest --store-durations"
+test-group = "pytest --splits 2 --group "
