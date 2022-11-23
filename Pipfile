@@ -7,6 +7,8 @@ name = "pypi"
 flask = "*"
 werkzeug = "*"
 serverless-wsgi = "*"
+structlog = "*"
+requests = "*"
 
 [dev-packages]
 black = "*"

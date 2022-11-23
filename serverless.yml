@@ -13,10 +13,11 @@ custom:
     noDeploy:
       - boto3
       - botocore
-    dockerizePip: true
     usePipenv: true
 
 provider:
+  runtime: python3.9
+  region: us-east-2
   name: aws
   deploymentBucket: "cc-lambda-deployments"
 
