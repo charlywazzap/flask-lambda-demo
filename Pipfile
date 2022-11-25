@@ -16,6 +16,7 @@ python-lambda-local = "*"
 pytest = "*"
 isort = "*"
 pytest-split = "*"
+locust = "*"
 
 [requires]
 python_version = "3.8"
@@ -30,3 +31,4 @@ test_lambda = "python-lambda-local -f handler wsgi_handler.py test_api_gateway_p
 test = "pytest -v"
 test-store-duration = "pytest --store-durations"
 test-group = "pytest --splits 2 --group "
+send_trafic = "locust -f load_test.py --headless --users 10 -H http://127.0.0.0:5000"
